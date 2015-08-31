@@ -36,6 +36,7 @@
         var settings = $.extend({
             'clearClass': 'clear_input',
             'focusAfterClear': true,
+            'hasContentClass': 'hasContents',
             'linkText': '&times;',
             'autoPosition': true
         }, options);
@@ -64,8 +65,10 @@
 
             function triggerBtn() {
                 if (hasText()) {
+                    $this.addClass(settings.hasContentClass);
                     btn.show();
                 } else {
+                    $this.removeClass(settings.hasContentClass);
                     btn.hide();
                 }
                 update();
